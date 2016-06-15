@@ -1,9 +1,9 @@
 ##
 ## Makefile for Duo in /home/juquet_q/Hub/Duo
-## 
+##
 ## Made by juquet_q
 ## Login   <juquet_q@epitech.net>
-## 
+##
 ## Started on  Mon Jun 13 15:21:54 2016 juquet_q
 ## Last update Mon Jun 13 16:22:03 2016 juquet_q
 ##
@@ -13,8 +13,13 @@ CC	= gcc
 DSRC	= ./src/
 
 SRC	= $(DSRC)main.c \
+	$(DSRC)move.c \
 	$(DSRC)tekpixel.c \
-	$(DSRC)background.c
+	$(DSRC)tekrect.c \
+	$(DSRC)print_brick.c \
+	$(DSRC)background.c \
+	$(DSRC)tekcircle.c \
+	$(DSRC)settings.c
 
 RM	= rm -f
 
@@ -34,9 +39,9 @@ CFLAGS	= -Wall -Wextra -Werror \
 
 NAME	= Duo
 
-all: $(OBJ) $(NAME)
+all: $(NAME)
 
-$(NAME):
+$(NAME):		$(OBJ)
 	@$(CC) $(OBJ) $(LIB) -o $(NAME)
 
 clean:
@@ -46,3 +51,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
