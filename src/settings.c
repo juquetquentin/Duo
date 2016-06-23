@@ -5,7 +5,7 @@
 ** Login   <juquet_q@epitech.net>
 **
 ** Started on  Wed Jun 15 03:38:04 2016 juquet_q
-** Last update Wed Jun 15 10:54:43 2016 juquet_q
+** Last update Thu Jun 23 09:54:06 2016 juquet_q
 */
 
 #include "duo.h"
@@ -28,7 +28,7 @@ void			set_brick(t_data *data, t_rectangle brick[NB_BRICK])
       brick[i].width = BRICK_WIDTH;
       brick[i].color.full = WHITE;
       pos.x = data->grey.center.x - (rayon / 2) + ((rand() % 2) * rayon);
-      pos.y -= rayon;
+      pos.y -= 2 * rayon;
       i++;
     }
 }
@@ -38,17 +38,19 @@ void	set_circle(t_data *data)
   data->grey.center.x = WIDTH / 2;
   data->grey.center.y = HEIGHT / 2;
   data->grey.color.full = 0xFFFFFF;
-  data->grey.rayon = 100;
+  data->grey.rayon = 200;
   data->grey.full = false;
   data->blue.center.x = data->grey.center.x - (data->grey.rayon * 3 / 4);
   data->blue.center.y = data->grey.center.y - (data->grey.rayon * 3 / 4);
   data->blue.color.full = BLUE;
-  data->blue.rayon = data->grey.rayon / 4;
+  data->blue.rayon = data->grey.rayon / 5;
   data->blue.full = true;
   data->red.center.x = data->grey.center.x + (data->grey.rayon * 3 / 4);
   data->red.center.y = data->grey.center.y + (data->grey.rayon * 3 / 4);
   data->red.color.full = RED;
-  data->red.rayon = data->grey.rayon / 4;
+  data->red.rayon = data->grey.rayon / 5;
   data->red.full = true;
   data->angle = M_PI * 1 / 4;
+  data->score = 0;
+  data->speed = 1;
 }
